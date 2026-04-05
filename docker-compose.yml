@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: residencialpost-db
+    restart: always
+    environment:
+      POSTGRES_USER: residencial
+      POSTGRES_PASSWORD: residencial
+      POSTGRES_DB: residencialpost
+    ports:
+      - "5432:5432"
