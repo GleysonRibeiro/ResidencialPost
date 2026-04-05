@@ -2,6 +2,9 @@ import uuid
 from sqlalchemy import Column, String, Boolean
 from sqlalchemy.dialects.postgresql import UUID
 from app.database import Base
+from app.models.enums import UserRole
+
+perfil = Column(String, nullable=False, default=UserRole.PORTEIRO.value)
 
 class User(Base):
     __tablename__ = "usuarios"
@@ -12,3 +15,6 @@ class User(Base):
     senha_hash = Column(String, nullable=False)
     perfil = Column(String, nullable=False)
     ativo = Column(Boolean, default=True)
+
+
+
